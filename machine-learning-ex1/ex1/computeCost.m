@@ -14,16 +14,16 @@ J = 0;
 %               You should set J to the cost.
 
 % method one easily understandable
-X = X(:,2);
+temp = 0;
 for i = 1:m
-  h = theta(1) + theta(2)*X(i);
+  h = theta(1) + theta(2)*X(i,2);
   %disp(h-y(i));
-  J = J + (h - y(i))^2;
+  temp = temp + (h - y(i))^2;
 end
 
-J = (1/(2*m))*J;
+J = temp/(2*m);
 
-% Method 2 :P easy code
+% Method 2 :P easy code and thats correct
 %costs = (X * theta - y) .^ 2;
 %J = sum(costs) / (2 * m);
 % =========================================================================

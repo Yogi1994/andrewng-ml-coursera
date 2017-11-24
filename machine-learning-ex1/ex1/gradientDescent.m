@@ -22,11 +22,11 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
-    x = (theta(1)  + (theta(2)*X(:,2))) - y;
-    
+    %x = (theta(1)  + (theta(2)*X(:,2))) - y;
+    x = (X*theta) - y;
     forTheta1 = sum(x)/m;
-    forTheta2 = sum(((theta(1)  + (theta(2)*X(:,2))) - y).*X(:,2))/m;
-    
+    %forTheta2 = sum(((theta(1)  + (theta(2)*X(:,2))) - y).*X(:,2))/m;
+    forTheta2 = sum(x.*X(:,2))/m;
     theta(1) = theta(1) - alpha*forTheta1;
     theta(2) = theta(2) - alpha*(forTheta2);
 
